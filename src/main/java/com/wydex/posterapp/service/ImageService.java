@@ -13,7 +13,8 @@ import java.io.*;
 public class ImageService {
 
     public byte[] generatePoster(MultipartFile photoFile) throws IOException {
-        BufferedImage template = ImageIO.read(new File("src/main/resources/static/blossom-event.jpg"));
+//        BufferedImage template = ImageIO.read(new File("src/main/resources/static/blossom-event.jpg"));
+        BufferedImage template = ImageIO.read(        getClass().getClassLoader().getResourceAsStream("static/blossom-event.jpg"));
 
         BufferedImage userImage = ImageIO.read(photoFile.getInputStream());
         int targetWidth = 457;
