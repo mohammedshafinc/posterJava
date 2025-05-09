@@ -18,4 +18,4 @@ COPY --from=build /app/target/posterapp-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Xmx256m", "-Xms128m", "-XX:+PrintGCDetails", "-XX:+PrintGCDateStamps", "-jar", "app.jar"]
